@@ -5,4 +5,5 @@ export class Book{
    price: string;
    location: string;
    status: boolean;
+   image:string;
 }
