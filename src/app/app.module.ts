@@ -7,7 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LibraryComponent } from './library/library.component';
-
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,9 @@ import { LibraryComponent } from './library/library.component';
     AppRoutingModule,
     NoopAnimationsModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
