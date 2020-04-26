@@ -1,47 +1,101 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
 
+const BOOKS: Book[] = [
+  {
+   id: 1001,
+   name: 'Anna Karineena',
+   author: 'Leo Tolstoy',
+   price: '$14',
+   location: 'A1001',
+   status: true,
+   image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+  },
+  {
+   id: 1002,
+   name: 'The Moonstone',
+   author: 'Wilkie Collins',
+   price: '$12',
+   location: 'A1002',
+   status: false,
+   image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+  },
+  {
+   id: 1003,
+   name: 'Anna Karineena',
+   author: 'Leo Tolstoy',
+   price: '$14',
+   location: 'A1003',
+   status: true,
+   image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+  },
+  {
+   id: 1004,
+   name: 'The Moonstone',
+   author: 'Wilkie Collins',
+   price: '$12',
+   location: 'A1004',
+   status: true,
+   image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+  },
+  {
+    id: 1005,
+    name: 'Anna Karineena',
+    author: 'Leo Tolstoy',
+    price: '$14',
+    location: 'A1003',
+    status: true,
+    image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+   },
+   {
+    id: 1006,
+    name: 'The Moonstone',
+    author: 'Wilkie Collins',
+    price: '$12',
+    location: 'A1004',
+    status: true,
+    image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+   },
+   {
+    id: 1007,
+    name: 'The Moonstone',
+    author: 'Wilkie Collins',
+    price: '$12',
+    location: 'A1004',
+    status: true,
+    image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+   },
+   {
+     id: 1008,
+     name: 'Anna Karineena',
+     author: 'Leo Tolstoy',
+     price: '$14',
+     location: 'A1003',
+     status: true,
+     image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+    },
+    {
+     id: 1009,
+     name: 'The Moonstone',
+     author: 'Wilkie Collins',
+     price: '$12',
+     location: 'A1004',
+     status: true,
+     image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+    }
+ ];
+
 @Component({
   selector: 'app-library',
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.scss']
 })
-export class LibraryComponent implements OnInit {
-  books: Book[] = [
-   {
-    id: 1001,
-    name: 'Anna Karineena',
-    author: 'Leo Tolstoy',
-    price: '$14',
-    location: 'A1001',
-    status: true
-   },
-   {
-    id: 1002,
-    name: 'The Moonstone',
-    author: 'Wilkie Collins',
-    price: '$12',
-    location: 'A1002',
-    status: false
-   },
-   {
-    id: 1003,
-    name: 'Anna Karineena',
-    author: 'Leo Tolstoy',
-    price: '$14',
-    location: 'A1003',
-    status: true
-   },
-   {
-    id: 1004,
-    name: 'The Moonstone',
-    author: 'Wilkie Collins',
-    price: '$12',
-    location: 'A1004',
-    status: true
-   }
-  ];
 
+
+export class LibraryComponent implements OnInit {
+
+  books = BOOKS;
+  selectedBook = BOOKS[0];
   constructor() { }
 
   ngOnInit(): void {
