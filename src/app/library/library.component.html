@@ -1,7 +1,26 @@
 <div class="container"
 fxLayout = "column"
-fxLayoutGap = "20px">
-<mat-list fxFlex>
+fxLayoutGap = "10px">
+<div fxFlex>
+<div>
+<h3>Books</h3>
+<hr>
+  </div>
+</div>
+<div fxFlex>
+<mat-grid-list cols = 3>
+<mat-grid-tile *ngFor="let book of books">
+<mat-grid-tile-header>
+<h1>{{book.name | uppercase}}</h1>
+</mat-grid-tile-header>
+<img src={{book.image}} alt={{book.name}}/>
+<mat-grid-tile-footer>
+  <h1>{{book.status?"Available":"Not Available"}}</h1>
+  </mat-grid-tile-footer>
+</mat-grid-tile>
+</mat-grid-list>
+</div>
+<!-- <mat-list fxFlex>
 <mat-list-item *ngFor = "let book of books">
   <h1 matLine>{{book.name}}</h1>
   <p matLine>{{book.id}}</p>
@@ -9,5 +28,5 @@ fxLayoutGap = "20px">
   <p matLine>{{book.location}}</p>
   <p matLine>{{book.status}}</p>
 </mat-list-item>
-</mat-list>
+</mat-list> -->
   </div>
