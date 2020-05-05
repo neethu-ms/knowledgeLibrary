@@ -95,7 +95,11 @@ const BOOKS: Book[] = [
 export class LibraryComponent implements OnInit {
 
   books = BOOKS;
-  selectedBook = BOOKS[0];
+  selectedBook: Book;
+
+  onSelect(book: Book){
+     this.selectedBook = book;
+  }
   constructor() { }
 
   ngOnInit(): void {

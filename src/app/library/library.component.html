@@ -9,7 +9,7 @@ fxLayoutGap = "10px">
 </div>
 <div fxFlex>
 <mat-grid-list cols = 3>
-<mat-grid-tile *ngFor="let book of books">
+<mat-grid-tile *ngFor="let book of books" (click) = "onSelect(book)">
 <mat-grid-tile-header>
 <h1>{{book.name | uppercase}}</h1>
 </mat-grid-tile-header>
@@ -20,13 +20,27 @@ fxLayoutGap = "10px">
 </mat-grid-tile>
 </mat-grid-list>
 </div>
-<!-- <mat-list fxFlex>
-<mat-list-item *ngFor = "let book of books">
-  <h1 matLine>{{book.name}}</h1>
-  <p matLine>{{book.id}}</p>
-  <p matLine>{{book.author}}></p>
-  <p matLine>{{book.location}}</p>
-  <p matLine>{{book.status}}</p>
-</mat-list-item>
-</mat-list> -->
+<div fxFlex *ngIf="selectedBook">
+  <mat-card>
+    <mat-card-header>
+        <mat-card-title>{{selectedBook.name | uppercase}}</mat-card-title>
+        <mat-card-subtitle>{{selectedBook.id}}</mat-card-subtitle>
+         </mat-card-header>
+    <img mat-card-image src={{selectedBook.image}} alt={{selectedBook.name}}>
+    <mat-card-content>
+      <p>
+        {{selectedBook.author}}
+       </p>
+      <p>
+       {{selectedBook.location}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
   </div>
+
+
