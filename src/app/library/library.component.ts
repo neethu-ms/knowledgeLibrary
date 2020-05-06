@@ -9,7 +9,22 @@ const BOOKS: Book[] = [
    price: '$14',
    location: 'A1001',
    status: true,
-   image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+   image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg",
+   comments: [
+    {
+      rating: 3,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    },
+
+    {
+      rating: 5,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    }
+   ]
   },
   {
    id: 1002,
@@ -18,7 +33,22 @@ const BOOKS: Book[] = [
    price: '$12',
    location: 'A1002',
    status: false,
-   image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+   image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg",
+   comments: [
+    {
+      rating: 3,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    },
+
+    {
+      rating: 5,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    }
+   ]
   },
   {
    id: 1003,
@@ -27,7 +57,22 @@ const BOOKS: Book[] = [
    price: '$14',
    location: 'A1003',
    status: true,
-   image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+   image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg",
+   comments: [
+    {
+      rating: 3,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    },
+
+    {
+      rating: 5,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    }
+   ]
   },
   {
    id: 1004,
@@ -36,7 +81,22 @@ const BOOKS: Book[] = [
    price: '$12',
    location: 'A1004',
    status: true,
-   image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+   image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg",
+   comments: [
+    {
+      rating: 3,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    },
+
+    {
+      rating: 5,
+      comment: "Good book",
+      author: "anonymous",
+      date: Date.now().toString()
+    }
+   ]
   },
   {
     id: 1005,
@@ -45,7 +105,22 @@ const BOOKS: Book[] = [
     price: '$14',
     location: 'A1003',
     status: true,
-    image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+    image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg",
+    comments: [
+      {
+        rating: 3,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      },
+
+      {
+        rating: 5,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      }
+     ]
    },
    {
     id: 1006,
@@ -54,7 +129,22 @@ const BOOKS: Book[] = [
     price: '$12',
     location: 'A1004',
     status: true,
-    image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+    image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg",
+    comments: [
+      {
+        rating: 3,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      },
+
+      {
+        rating: 5,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      }
+     ]
    },
    {
     id: 1007,
@@ -63,7 +153,22 @@ const BOOKS: Book[] = [
     price: '$12',
     location: 'A1004',
     status: true,
-    image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+    image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg",
+    comments: [
+      {
+        rating: 3,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      },
+
+      {
+        rating: 5,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      }
+     ]
    },
    {
      id: 1008,
@@ -72,7 +177,22 @@ const BOOKS: Book[] = [
      price: '$14',
      location: 'A1003',
      status: true,
-     image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg"
+     image:"https://images-na.ssl-images-amazon.com/images/I/5167gb%2BIMHL._SX315_BO1,204,203,200_.jpg",
+     comments: [
+      {
+        rating: 3,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      },
+
+      {
+        rating: 5,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      }
+     ]
     },
     {
      id: 1009,
@@ -81,7 +201,22 @@ const BOOKS: Book[] = [
      price: '$12',
      location: 'A1004',
      status: true,
-     image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg"
+     image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg",
+     comments: [
+      {
+        rating: 5,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      },
+
+      {
+        rating: 4,
+        comment: "Good book",
+        author: "anonymous",
+        date: Date.now().toString()
+      }
+     ]
     }
  ];
 
