@@ -1,3 +1,4 @@
+import { Comment } from './comment';
 export class Book{
    id: number;
    name: string;
@@ -5,5 +6,6 @@ export class Book{
    price: string;
    location: string;
    status: boolean;
-   image:string;
+   image: string;
+   comments: Comment[];
 }
