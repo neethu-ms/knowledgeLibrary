@@ -20,27 +20,6 @@ fxLayoutGap = "10px">
 </mat-grid-tile>
 </mat-grid-list>
 </div>
-<div fxFlex *ngIf="selectedBook">
-  <mat-card>
-    <mat-card-header>
-        <mat-card-title>{{selectedBook.name | uppercase}}</mat-card-title>
-        <mat-card-subtitle>{{selectedBook.id}}</mat-card-subtitle>
-         </mat-card-header>
-    <img mat-card-image src={{selectedBook.image}} alt={{selectedBook.name}}>
-    <mat-card-content>
-      <p>
-        {{selectedBook.author}}
-       </p>
-      <p>
-       {{selectedBook.location}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-  </div>
+<app-bookdetail [book] = "selectedBook"></app-bookdetail>
 
 

@@ -204,14 +204,14 @@ const BOOKS: Book[] = [
      image:"https://m.media-amazon.com/images/I/41yctpV8VJL.jpg",
      comments: [
       {
-        rating: 3,
+        rating: 5,
         comment: "Good book",
         author: "anonymous",
         date: Date.now().toString()
       },
 
       {
-        rating: 5,
+        rating: 4,
         comment: "Good book",
         author: "anonymous",
         date: Date.now().toString()
