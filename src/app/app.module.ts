@@ -12,6 +12,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
+import { BookService } from './services/book.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import { BookdetailComponent } from './bookdetail/bookdetail.component';
     MatButtonModule
 
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
