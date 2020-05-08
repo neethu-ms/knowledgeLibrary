@@ -13,11 +13,10 @@ export class BookService {
     return BOOKS;
   }
 
-  getBook(id): Book{
-    console.log("id",id);
-    console.log("BOOKS",BOOKS);
+  getBook(id: number): Book{
+
     let book = BOOKS.filter(book => book.id === id)[0];
-    console.log('book=',book);
+    console.log('book=', book);
     return book;
   }
 }

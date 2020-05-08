@@ -18,9 +18,9 @@ export class BookdetailComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params['id'];
     console.log("id in constructor", id);
-    this.book = this.bookService.getBook(1001);
+    this.book = this.bookService.getBook(id);
     console.log("selected book",this.book);
   }
 
