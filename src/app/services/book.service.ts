@@ -12,4 +12,12 @@ export class BookService {
   getBooks(): Book[]{
     return BOOKS;
   }
+
+  getBook(id): Book{
+    console.log("id",id);
+    console.log("BOOKS",BOOKS);
+    let book = BOOKS.filter(book => book.id === id)[0];
+    console.log('book=',book);
+    return book;
+  }
 }
