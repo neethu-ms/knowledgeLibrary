@@ -9,7 +9,7 @@ fxLayoutGap = "10px">
 </div>
 <div fxFlex>
 <mat-grid-list cols = 3>
-<mat-grid-tile *ngFor="let book of books" (click) = "onSelect(book)">
+<mat-grid-tile *ngFor="let book of books" [routerLink] = "['/bookdetail',book.id]">
 <mat-grid-tile-header>
 <h1>{{book.name | uppercase}}</h1>
 </mat-grid-tile-header>
@@ -20,6 +20,6 @@ fxLayoutGap = "10px">
 </mat-grid-tile>
 </mat-grid-list>
 </div>
-<app-bookdetail [book] = "selectedBook"></app-bookdetail>
+<!-- <app-bookdetail [book] = "selectedBook"></app-bookdetail> -->
 
 

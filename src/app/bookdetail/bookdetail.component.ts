@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '../shared/book';
+import { Params, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { BookService } from '../services/book.service';
 
 @Component({
   selector: 'app-bookdetail',
@@ -8,11 +11,22 @@ import { Book } from '../shared/book';
 })
 export class BookdetailComponent implements OnInit {
 
-  @Input()
+
   book: Book;
-  constructor() { }
+  constructor( private bookService: BookService,
+    private route: ActivatedRoute,
+    private location: Location) { }
 
   ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    console.log("id in constructor", id);
+    this.book = this.bookService.getBook(1001);
+    console.log("selected book",this.book);
   }
+
+  goBack(): void{
+    this.location.back();
+  }
+
 
 }

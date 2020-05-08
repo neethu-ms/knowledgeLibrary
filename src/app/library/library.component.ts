@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
 import { BookService } from '../services/book.service';
 
+
 @Component({
   selector: 'app-library',
   templateUrl: './library.component.html',
@@ -13,6 +14,7 @@ export class LibraryComponent implements OnInit {
 
   books: Book[];
   selectedBook: Book;
+  book: Book;
 
   onSelect(book: Book){
      this.selectedBook = book;
@@ -21,6 +23,8 @@ export class LibraryComponent implements OnInit {
 
   ngOnInit(){
       this.books = this.bookService.getBooks();
+
   }
+
 
 }
