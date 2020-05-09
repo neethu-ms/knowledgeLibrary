@@ -13,12 +13,7 @@ import { BookService } from '../services/book.service';
 export class LibraryComponent implements OnInit {
 
   books: Book[];
-  selectedBook: Book;
-  book: Book;
 
-  onSelect(book: Book){
-     this.selectedBook = book;
-  }
   constructor(private bookService: BookService) { }
 
   ngOnInit(){
