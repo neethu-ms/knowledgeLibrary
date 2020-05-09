@@ -6,17 +6,13 @@ A single page Angular application to see the available books in a library and to
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build
+## Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+!["Home Page"](docs/HomePage.png "Home Page")
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+!["Book Detail Page"](docs/BookDetails.png "Book Detail Page")
 
 ## Dependencies
 
