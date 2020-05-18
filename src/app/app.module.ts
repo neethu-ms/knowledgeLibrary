@@ -13,7 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
 import { BookService } from './services/book.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatCardModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
-
+    MatFormFieldModule,
+    MatProgressSpinnerModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
