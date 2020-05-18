@@ -3,18 +3,20 @@ import { Book } from '../shared/book';
 import { BOOKS } from '../shared/books';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BookService {
+  constructor() {}
 
-  constructor() { }
-
-  getBooks(): Book[]{
-    return BOOKS;
+  getBooks(): Promise<Book[]> {
+    return new Promise((resolve) => {
+       resolve(BOOKS);
+    });
   }
 
-  getBook(id: number): Book{
-    let book = BOOKS.filter(book => book.id === id)[0];
-    return book;
+  getBook(id: number): Promise<Book> {
+    return new Promise((resolve) => {
+     resolve(BOOKS.filter((book) => book.id === id)[0])
+     });
   }
 }

@@ -7,7 +7,7 @@ fxLayoutGap = "10px">
 <hr>
   </div>
 </div>
-<div fxFlex>
+<div fxFlex *ngIf="books">
 <mat-grid-list cols = 3>
 <mat-grid-tile *ngFor="let book of books" [routerLink] = "['/bookdetail',book.id]">
 <mat-grid-tile-header>
@@ -20,6 +20,9 @@ fxLayoutGap = "10px">
 </mat-grid-tile>
 </mat-grid-list>
 </div>
-
+<div [hidden]="books">
+<mat-spinner></mat-spinner>
+<h2>Loading... Please Wait</h2>
+</div>
 
 
