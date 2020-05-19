@@ -28,7 +28,7 @@
         <p>
           <mat-form-field>
             <input matInput formControlName="name" placeholder="name" type="text" required>
-            <mat-error *ngIf="feedbackForm.get('name').hasError('required') && feedbackForm.get('name').touched">Name is
+            <mat-error  *ngIf="feedbackForm.get('name').hasError('required') && feedbackForm.get('name').touched">Name is
               Required</mat-error>
           </mat-form-field>
         </p>
