@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Book } from '../shared/book';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -12,6 +12,7 @@ import { Feedback } from '../shared/feedback';
   styleUrls: ['./bookdetail.component.scss'],
 })
 export class BookdetailComponent implements OnInit {
+  @ViewChild('fform') feedbackFormDirective;
   feedbackForm: FormGroup;
   feedback: Feedback;
   book: Book;
@@ -45,9 +46,12 @@ export class BookdetailComponent implements OnInit {
 
   onSubmit() {
     this.feedback = this.feedbackForm.value;
-    this.feedbackForm.reset({
+     this.feedbackForm.reset({
       name: '',
       message: '',
     });
+    this.feedbackFormDirective.resetForm();
   }
+
+
 }
