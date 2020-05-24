@@ -23,7 +23,7 @@
   <div fxFlex="40" fxLayout="column" *ngIf="book">
     <div fxFlex fxFlexOffset="20px" class="form-size">
       <h2>Give us your Feedback</h2>
-      <p>{{feedbackForm.value}}{{feedbackForm.status}}</p>
+      <p>{{feedbackForm.status}}</p>
       <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
         <p>
           <mat-form-field>

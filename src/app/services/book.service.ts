@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../shared/book';
 import { BOOKS } from '../shared/books';
+import { of, Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,15 +9,12 @@ import { BOOKS } from '../shared/books';
 export class BookService {
   constructor() {}
 
-  getBooks(): Promise<Book[]> {
-    return new Promise((resolve) => {
-       resolve(BOOKS);
-    });
+  getBooks(): Observable<Book[]> {
+    return of(BOOKS);
   }
 
-  getBook(id: number): Promise<Book> {
-    return new Promise((resolve) => {
-     resolve(BOOKS.filter((book) => book.id === id)[0])
-     });
+  getBook(id: number): Observable<Book> {
+    return of(BOOKS.filter((book) => book.id === id)[0]);
+
   }
 }
