@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { BookService } from '../services/book.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Feedback } from '../shared/feedback';
+import { Comment } from '../shared/comment';
+
 
 @Component({
   selector: 'app-bookdetail',
@@ -16,6 +18,8 @@ export class BookdetailComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
   book: Book;
+  comment: Comment;
+
   constructor(
     private bookService: BookService,
     private route: ActivatedRoute,
@@ -39,16 +43,22 @@ export class BookdetailComponent implements OnInit {
   }
   createForm() {
     this.feedbackForm = this.fb.group({
-      name: ['', Validators.required],
-      message: ['', Validators.required],
+      author: ['', Validators.required],
+      comment: ['', Validators.required],
+      rating:1
+
     });
   }
 
   onSubmit() {
     this.feedback = this.feedbackForm.value;
+    this.comment = this.feedbackForm.value;
+    this.comment.date = new Date().toISOString();
+    this.book.comments.push(this.comment);
      this.feedbackForm.reset({
-      name: '',
-      message: '',
+      author: '',
+      comment: '',
+      rating:1
     });
     this.feedbackFormDirective.resetForm();
   }
