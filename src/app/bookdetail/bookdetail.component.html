@@ -27,15 +27,18 @@
       <form novalidate [formGroup]="feedbackForm" #fform="ngForm" (ngSubmit)="onSubmit()">
         <p>
           <mat-form-field>
-            <input matInput formControlName="name" placeholder="name" type="text" required>
-            <mat-error  *ngIf="feedbackForm.get('name').hasError('required') && feedbackForm.get('name').touched">Name is
+            <input matInput formControlName="author" placeholder="name" type="text" required>
+            <mat-error  *ngIf="feedbackForm.get('author').hasError('required') && feedbackForm.get('author').touched">Name is
               Required</mat-error>
           </mat-form-field>
         </p>
+        <p>
+        <mat-slider formControlName="rating" min="1" max="5" step="1" thumbLabel tickInterval="1" value="1"></mat-slider>
+      </p>
         <mat-form-field>
-          <input matInput formControlName="message" placeholder="message" type="text" required>
-          <mat-error *ngIf="feedbackForm.get('message').hasError('required') && feedbackForm.get('message').touched">
-            Message is Required</mat-error>
+          <input matInput formControlName="comment" placeholder="Your comment" type="text" required>
+          <mat-error *ngIf="feedbackForm.get('comment').hasError('required') && feedbackForm.get('comment').touched">
+            Comment is Required</mat-error>
         </mat-form-field>
         <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
       </form>
@@ -46,7 +49,7 @@
       <mat-list-item *ngFor="let comment of book.comments">
         <p matLine>{{comment.comment}}</p>
         <p matLine>{{comment.rating}}</p>
-        <p matLine>{{comment.author}} {{ comment.date | date }}</p>
+        <p matLine>{{comment.author}}  {{ comment.date | date }}</p>
       </mat-list-item>
 
     </mat-list>
