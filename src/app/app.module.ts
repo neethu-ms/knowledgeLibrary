@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LibraryComponent, BookdetailComponent],
@@ -34,7 +35,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatSliderModule
+    MatSliderModule,
+    HttpClientModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent],
