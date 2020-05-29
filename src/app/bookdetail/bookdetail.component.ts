@@ -59,7 +59,6 @@ export class BookdetailComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.feedback = this.feedbackForm.value;
     this.comment = this.feedbackForm.value;
     this.comment.date = new Date().toISOString();
