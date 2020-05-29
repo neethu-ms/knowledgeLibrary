@@ -18,7 +18,6 @@ export class LibraryComponent implements OnInit {
 
   ngOnInit(){
       this.bookService.getBooks().subscribe(books => this.books=books);
-
   }
 
 
