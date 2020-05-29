@@ -59,10 +59,14 @@ export class BookdetailComponent implements OnInit {
   }
 
   onSubmit() {
+
     this.feedback = this.feedbackForm.value;
     this.comment = this.feedbackForm.value;
     this.comment.date = new Date().toISOString();
     this.book.comments.push(this.comment);
+    this.bookService.putBook(this.book).subscribe((book) => {
+      this.book = book;
+    });
      this.feedbackForm.reset({
       author: '',
       comment: '',
