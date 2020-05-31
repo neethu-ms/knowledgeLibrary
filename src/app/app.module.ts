@@ -11,7 +11,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { BookdetailComponent } from './bookdetail/bookdetail.component';
-import { BookService } from './services/book.service';
+import { BookService} from './services/book.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
 import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service'
 
 @NgModule({
   declarations: [AppComponent, LibraryComponent, BookdetailComponent],
@@ -40,6 +41,7 @@ import { baseURL } from './shared/baseurl';
     HttpClientModule
   ],
   providers: [BookService,
+    ProcessHTTPMsgService,
    {provide: 'BaseURL', useValue:baseURL}
   ],
   bootstrap: [AppComponent],
