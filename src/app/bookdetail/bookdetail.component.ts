@@ -6,9 +6,6 @@ import { BookService } from '../services/book.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Feedback } from '../shared/feedback';
 import { Comment } from '../shared/comment';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { baseURL } from '../shared/baseurl';
-import { Observable} from 'rxjs';
 
 @Component({
   selector: 'app-bookdetail',
@@ -21,20 +18,21 @@ export class BookdetailComponent implements OnInit {
   feedback: Feedback;
   book: Book;
   comment: Comment;
+  errMess: string;
 
   constructor(
     private bookService: BookService,
     private route: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder,
-    private http: HttpClient
+    private fb: FormBuilder
+
   ) {
     this.createForm();
   }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.bookService.getBook(id).subscribe((book) => (this.book = book));
+    this.bookService.getBook(id).subscribe((book) => (this.book = book), errmess => this.errMess = <any>errmess);
   }
 
   goBack(): void {
@@ -46,7 +44,7 @@ export class BookdetailComponent implements OnInit {
       this.book.status = false;
       this.bookService.putBook(this.book).subscribe((book) => {
         this.book = book;
-      })
+      }, errmess => this.errMess = <any>errmess);
 
   }
   createForm() {
@@ -65,7 +63,7 @@ export class BookdetailComponent implements OnInit {
     this.book.comments.push(this.comment);
     this.bookService.putBook(this.book).subscribe((book) => {
       this.book = book;
-    });
+    }, errmess => this.errMess = <any>errmess);
      this.feedbackForm.reset({
       author: '',
       comment: '',
