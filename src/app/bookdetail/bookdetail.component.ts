@@ -7,8 +7,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Feedback } from '../shared/feedback';
 import { Comment } from '../shared/comment';
 
-
-
 @Component({
   selector: 'app-bookdetail',
   templateUrl: './bookdetail.component.html',
