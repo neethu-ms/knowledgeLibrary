@@ -20,9 +20,13 @@ fxLayoutGap = "10px">
 </mat-grid-tile>
 </mat-grid-list>
 </div>
-<div [hidden]="books">
+<div [hidden]="books || errMess">
 <mat-spinner></mat-spinner>
 <h2>Loading... Please Wait</h2>
+</div>
+<div fxFlex *ngIf="errMess">
+<h2>Error</h2>
+<h4>{{errMess}}</h4>
 </div>
 
 

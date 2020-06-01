@@ -3,19 +3,24 @@ import { Book } from '../shared/book';
 import { Observable} from 'rxjs';
 import { baseURL } from '../shared/baseurl';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BookService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private processHTTPMsgService: ProcessHTTPMsgService) {}
 
   getBooks(): Observable<Book[]> {
-    return  this.http.get<Book[]>(baseURL+ 'books');
+    return  this.http.get<Book[]>(baseURL+ 'books')
+    .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getBook(id: number): Observable<Book> {
-    return this.http.get<Book>(baseURL+'books/'+id);
+    return this.http.get<Book>(baseURL+'books/'+id)
+    .pipe(catchError(this.processHTTPMsgService.handleError));
 
   }
 
@@ -27,6 +32,7 @@ export class BookService {
         })
     };
 
-    return this.http.put<Book>(baseURL+'books/'+book.id,book,httpOptions);
+    return this.http.put<Book>(baseURL+'books/'+book.id,book,httpOptions)
+    .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 }

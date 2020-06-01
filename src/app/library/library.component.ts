@@ -13,11 +13,12 @@ import { BookService } from '../services/book.service';
 export class LibraryComponent implements OnInit {
 
   books: Book[];
+  errMess: string;
 
   constructor(private bookService: BookService) { }
 
   ngOnInit(){
-      this.bookService.getBooks().subscribe(books => this.books=books);
+      this.bookService.getBooks().subscribe(books => this.books=books, errmess => this.errMess = <any>errmess);
   }
 
 
