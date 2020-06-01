@@ -6,7 +6,7 @@ import { BookService } from '../services/book.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Feedback } from '../shared/feedback';
 import { Comment } from '../shared/comment';
-import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -26,8 +26,8 @@ export class BookdetailComponent implements OnInit {
     private bookService: BookService,
     private route: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder,
-    private http: HttpClient
+    private fb: FormBuilder
+
   ) {
     this.createForm();
   }
