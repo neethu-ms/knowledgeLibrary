@@ -12,6 +12,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ---
 
+!["Home Page"](docs/ReserveBookIfAvailable.png "ReserveBookIfAvailable")
+
+---
+
 !["Book Detail Page"](docs/BookDetails.png "Book Detail Page")
 
 ## Dependencies
